@@ -1,5 +1,5 @@
 {
-    "name": "featurecli-commons",
+    "name": "smithery-basic-equipment",
     "version": "0.1.0",
     "description": "Common functions, types, and constants shared between main module and plugins",
     "main": "index.js"
