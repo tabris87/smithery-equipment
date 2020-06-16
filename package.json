@@ -1,6 +1,13 @@
 {
     "name": "smithery-basic-equipment",
     "version": "0.1.0",
+    "author": "Adrian Marten",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tabris87/smithery-basic-equipment.git"
+    },
+    "license": "Apache-2.0",
     "description": "Common functions, types, and constants shared between main module and plugins",
+    "scripts": {},
     "main": "index.js"
 }
