@@ -6,6 +6,7 @@
         "type": "git",
         "url": "https://github.com/tabris87/smithery-equipment.git"
     },
+    "bugs": "https://github.com/tabris87/smithery-equipment/issues",
     "license": "Apache-2.0",
     "description": "Common functions, types, and constants shared between main module and plugins",
     "scripts": {},
