@@ -1,2 +1,2 @@
-# featureCLI-commons
-Common code for the featureCLI
+# smithery-basic-equipment
+Common code parts for the smithery toolset
