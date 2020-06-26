@@ -204,7 +204,7 @@ class ModelConverter {
     getCNFString(bDimacs = false, bName = false) {
         let sHeader = "";
         if (bDimacs) {
-            let aFeatures = this.getFeatureNumbers();
+            let aFeatures = this.getFeatures();
             let sFeatureList = aFeatures
                 .map(oFeature => `c ${oFeature.getId()} ${oFeature.getName()}`)
                 .reduce((sComplete, sComment) => `${sComplete}\n${sComment}`);
@@ -221,9 +221,14 @@ class ModelConverter {
 
     }
 
-    getFeatureNumbers() {
+    getFeatures() {
         return Object.values(this._mFeatures);
     }
+
+    getCNFClauses() {
+        return [...this._aCNFClauses];
+    }
+
 }
 
 module.exports = ModelConverter;
