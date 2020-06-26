@@ -18,14 +18,11 @@ const ALTERNATIVE_NAME = "alt";
  */
 class ModelConverter {
     constructor(oModel) {
-        this._model = this.setModel(oModel);
         this._nbFeatures = 0;
         this._nbClauses = 0;
         this._mFeatures = {}
         this._aCNFClauses = [];
-        if (this._model) {
-            this._createCNFPresentation();
-        }
+        this._model = this.setModel(oModel);
     }
 
     getModel() {
