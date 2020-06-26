@@ -110,7 +110,7 @@ class ModelConverter {
 
     _traverse(node) {
         if (node.name === "feature") {
-            this._createSubFeature(node, ModelRenderer.contains(node.attributes, "mandatory", false));
+            this._createSubFeature(node, ModelInternal.contains(node.attributes, "mandatory", false));
         } else if (node.name === "alt") {
             this._createAlternativeGroup(node);
         } else if (node.name === "and") {
@@ -123,7 +123,7 @@ class ModelConverter {
     }
 
     _createRootNode(oRootNode) {
-        var sName = ModelRenderer.contains(oRootNode.attributes, "name", "unnamed");
+        var sName = ModelInternal.contains(oRootNode.attributes, "name", "unnamed");
         if (!this._mFeatures[sName]) {
             this._mFeatures[sName] = new Variable(Object.keys(this._mFeatures).length + 1, sName);
         }
@@ -132,8 +132,8 @@ class ModelConverter {
 
     _createSubFeature(oNode, bMandatory = false) {
         var oParent = oNode.parent;
-        var sParentName = ModelRenderer.contains(oParent.attributes, "name", "unnamed");
-        var sNodeName = ModelRenderer.contains(oNode.attributes, "name", "unnamed");
+        var sParentName = ModelInternal.contains(oParent.attributes, "name", "unnamed");
+        var sNodeName = ModelInternal.contains(oNode.attributes, "name", "unnamed");
         if (!this._mFeatures[sNodeName]) {
             this._mFeatures[sNodeName] = new Variable(Object.keys(this._mFeatures).length + 1, sNodeName);
         }
@@ -147,15 +147,15 @@ class ModelConverter {
 
     _createAndGroup(node) {
         let aChildren = node.children;
-        this._createSubFeature(node, ModelRenderer.contains(node.attributes, "mandatory", false));
+        this._createSubFeature(node, ModelInternal.contains(node.attributes, "mandatory", false));
         aChildren.forEach(oChild => this._traverse(oChild));
     }
 
     _createOrGroup(node) {
         let aChildren = node.children;
-        this._createSubFeature(node, ModelRenderer.contains(node.attributes, "mandatory", false));
-        var sNodeName = ModelRenderer.contains(node.attributes, "name", "unnamed");
-        var aChildrenName = aChildren.map(oChild => ModelRenderer.contains(oChild.attributes, "name", "unnamed"));
+        this._createSubFeature(node, ModelInternal.contains(node.attributes, "mandatory", false));
+        var sNodeName = ModelInternal.contains(node.attributes, "name", "unnamed");
+        var aChildrenName = aChildren.map(oChild => ModelInternal.contains(oChild.attributes, "name", "unnamed"));
         aChildrenName.forEach(sName => {
             if (!this._mFeatures[sName]) {
                 this._mFeatures[sName] = new Variable(Object.keys(this._mFeatures).length + 1, sName);
@@ -174,9 +174,9 @@ class ModelConverter {
 
     _createAlternativeGroup(node) {
         let aChildren = node.children;
-        this._createSubFeature(node, ModelRenderer.contains(node.attributes, "mandatory", false));
-        var sNodeName = ModelRenderer.contains(node.attributes, "name", "unnamed");
-        var aChildrenName = aChildren.map(oChild => ModelRenderer.contains(oChild.attributes, "name", "unnamed"));
+        this._createSubFeature(node, ModelInternal.contains(node.attributes, "mandatory", false));
+        var sNodeName = ModelInternal.contains(node.attributes, "name", "unnamed");
+        var aChildrenName = aChildren.map(oChild => ModelInternal.contains(oChild.attributes, "name", "unnamed"));
         aChildrenName.forEach(sName => {
             if (!this._mFeatures[sName]) {
                 this._mFeatures[sName] = new Variable(Object.keys(this._mFeatures).length + 1, sName);
