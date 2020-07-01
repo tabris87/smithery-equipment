@@ -55,6 +55,10 @@ class ModelInternal {
         return this._oFeatureTree;
     }
 
+    getFeatures() {
+        
+    }
+
     getCTCs() {
         return this._aCTCs;
     }

@@ -72,7 +72,6 @@ class ModelConverter {
                 // concat both togheter
                 let aFirstOperand = traverseCTC(oCTC.children[0]);
                 let aSecondOperand = traverseCTC(oCTC.children[1]);
-                debugger;
                 aFirstOperand = !Array.isArray(aFirstOperand) ? [aFirstOperand] : aFirstOperand;
                 aSecondOperand = !Array.isArray(aSecondOperand) ? [aSecondOperand] : aSecondOperand;
 
