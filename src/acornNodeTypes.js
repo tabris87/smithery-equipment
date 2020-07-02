@@ -1,4 +1,5 @@
-/*Taken from https://github.com/acornjs/acorn
+/**
+ *Taken from https://github.com/acornjs/acorn
  *to ensure compatibility with the esprima format and tools.
  *
  *Distributed under MIT-LICENCSE:
@@ -22,6 +23,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ */
+"use strict";
 
 var Node = function Node(pos) {
     this.type = "";
