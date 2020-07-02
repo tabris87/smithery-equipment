@@ -1,6 +1,6 @@
 {
     "name": "smithery-equipment",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "author": "Adrian Marten",
     "repository": {
         "type": "git",
@@ -10,5 +10,8 @@
     "license": "Apache-2.0",
     "description": "Common functions, types, and constants shared between main module and plugins",
     "scripts": {},
-    "main": "index.js"
+    "main": "index.js",
+    "dependencies": {
+        "xml-reader": "^2.4.3"
+    }
 }
